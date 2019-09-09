@@ -86,7 +86,7 @@ input[type=number] {
     border-radius:11px;
     font-family: 'Montserrat';
 	border:1px solid #4b8f29;
-	display:inline-block;
+	display:block;
 	cursor:pointer;
     color:#ffffff;
     outline:none;
@@ -110,4 +110,21 @@ input[type=number] {
 	position:relative;
     top:1px;
     outline:none;
+}
+
+.timerDiv{
+    display: inline-block;
+}
+
+.timer{
+    width: 160px;
+    border: solid;
+    width: auto;
+    border-radius: 12px;
+    padding-top: 15px;
+    padding-left: 40px;
+    /* display: inline; */
+    padding-right: 40px;
+    padding-bottom: 15px;
+    font-size: 60px;
 }

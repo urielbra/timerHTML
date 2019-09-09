@@ -6,7 +6,7 @@
 </head>
 <body>
 
-    <div class="mainBox">
+    <div id="firstScreen" class="mainBox">
         <div class="questionDiv">
         <p class="question">Quantas repetições?</p>
         <input oninput="getIterance()" id="iterance" type="number" class="boxInput">
@@ -19,6 +19,21 @@
 
         <button id="startButtonOff" class="botaoStartOff">Começar!</button>
         <button onclick="start()" style="display: none" id="startButton" onclick="start()" href="#" class="botaoStart">Começar!</button>
+    </div>
+
+    <div style="display: none" id="secondScreen" class="mainBox">
+         <div class="timerDiv">
+        <p id="timer" class="timer">00:45</p>
+        <!-- <input oninput="getIterance()" id="iterance" type="number" class="boxInput"> -->
+        </div>
+
+        <!-- <div class="questionDiv">
+                <p class="question">Quantos segundos?</p>
+                <input oninput="getSeconds()" id="seconds" type="number" class="boxInput">
+        </div>  -->
+
+        <!-- <button id="startButtonOff" class="botaoStart">Começar!</button> -->
+        <button onclick="startTimer()"  id="startTimerButton" onclick="startTimer()" href="#" class="botaoStart">Começar!</button>
     </div>
 
 </body>
