@@ -84,37 +84,37 @@ function getTime(){
 }
 
 function startTimer(){
-    //  while(getTime() !== '00:00'){
-     var running = setInterval(() => {
-         timerRunning = true;
-        var oldSecond = getTime();
-        var newSecond = (toSeconds(oldSecond)) - 1;
-        if (getTime() === '00:00') {
-            clearInterval(running);
-            console.log('Time to stop');
-            iterance--;
-            spawnSWAL();
-            if(iterance===0){
-                location.reload();
-                timerRunning = false;
-                secondScreen = false;
-                firstButtonDisabled = true;
-                get("firstScreen").style.display = 'block';
-                get("secondScreen").style.display = 'none';
-                get("seconds").value = '';
-                get("iterance").value = '';
-            } else {
-            setIterance(iterance);
-            setTime(toMinutes(seconds));
-            timerRunning = false;
-            }
-        } else {    
-        setTime(toMinutes(newSecond));
-        }
-    },1000);
-    
-    
-    // }
+
+    if(!timerRunning){
+        timerRunning = true;
+        var running = setInterval(() => {
+           var oldSecond = getTime();
+           var newSecond = (toSeconds(oldSecond)) - 1;
+           if (getTime() === '00:00') {
+               clearInterval(running);
+               console.log('Time to stop');
+               iterance--;
+               spawnSWAL();
+               if(iterance===0){
+                   location.reload();
+                   timerRunning = false;
+                   secondScreen = false;
+                   firstButtonDisabled = true;
+                   get("firstScreen").style.display = 'block';
+                   get("secondScreen").style.display = 'none';
+                   get("seconds").value = '';
+                   get("iterance").value = '';
+               } else {
+               setIterance(iterance);
+               setTime(toMinutes(seconds));
+               timerRunning = false;
+               }
+           } else {    
+           setTime(toMinutes(newSecond));
+           }
+       },1000);
+    }
+
 }
 
 function get(element){
