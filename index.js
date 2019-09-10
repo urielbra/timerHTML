@@ -95,20 +95,9 @@ function startTimer(){
                console.log('Time to stop');
                iterance--;
                spawnSWAL();
-               if(iterance===0){
-                   location.reload();
-                   timerRunning = false;
-                   secondScreen = false;
-                   firstButtonDisabled = true;
-                   get("firstScreen").style.display = 'block';
-                   get("secondScreen").style.display = 'none';
-                   get("seconds").value = '';
-                   get("iterance").value = '';
-               } else {
                setIterance(iterance);
                setTime(toMinutes(seconds));
                timerRunning = false;
-               }
            } else {    
            setTime(toMinutes(newSecond));
            }
@@ -135,6 +124,16 @@ function closeSwal(){
     pauseAudio();
     (get('swal').style.display='none')
     swalOn = false;
+    if(iterance===0){
+        location.reload();
+        timerRunning = false;
+        secondScreen = false;
+        firstButtonDisabled = true;
+        get("firstScreen").style.display = 'block';
+        get("secondScreen").style.display = 'none';
+        get("seconds").value = '';
+        get("iterance").value = '';
+    } 
 }
 
 
