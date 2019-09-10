@@ -26,7 +26,10 @@
         <p id="timer" class="timer">00:45</p>
         <!-- <input oninput="getIterance()" id="iterance" type="number" class="boxInput"> -->
         </div>
-
+        <div class="reps">
+            <label>Restam</label>
+        <label id="iteranceLeft" style="font-weight: 900;">5</label> <label> repetições</label>
+        </div>
         <!-- <div class="questionDiv">
                 <p class="question">Quantos segundos?</p>
                 <input oninput="getSeconds()" id="seconds" type="number" class="boxInput">
@@ -35,6 +38,11 @@
         <!-- <button id="startButtonOff" class="botaoStart">Começar!</button> -->
         <button onclick="startTimer()"  id="startTimerButton" onclick="startTimer()" href="#" class="botaoStart">Começar!</button>
     </div>
+
+    <div onclick="closeSwal()" style="display: none" id='swal' class="swal">
+        <img style="width: 250px" src="sound.gif">
+    </div>
+
 
 </body>
 </html>
