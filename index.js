@@ -112,6 +112,7 @@ function get(element){
 
 function spawnSWAL(){
     swalOn = true;
+    get('secondScreen').style.display = 'none';
     get('swal').style.display = 'flex';
     audioPlaying = setInterval(() => {
         playAudio()
@@ -122,6 +123,7 @@ function spawnSWAL(){
 function closeSwal(){
     clearInterval(audioPlaying);
     pauseAudio();
+    get('secondScreen').style.display = 'block';
     (get('swal').style.display='none')
     swalOn = false;
     if(iterance===0){
