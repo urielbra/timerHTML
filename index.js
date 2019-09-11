@@ -7,6 +7,21 @@ var audioPlaying;
 var running;
 var firstButtonDisabled = true;
 
+document.addEventListener ('keypress', (event) => {
+  if(secondScreen){
+    if(event.charCode === 32){
+      
+      if(timerRunning){
+        resetTimer();
+      } else{
+        startTimer();
+      }
+    }
+  }
+});
+
+
+
 var alarm = new Audio('assets/alarm1.mp3');
 var beep = new Audio('assets/beep.mp3');
 var duration = Math.ceil(alarm) * 1000;
