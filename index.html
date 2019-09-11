@@ -17,8 +17,11 @@
                 <input oninput="getSeconds()" id="seconds" type="number" class="boxInput">
         </div>
 
-        <button id="startButtonOff" class="botaoStartOff">Começar!</button>
-        <button onclick="start()" style="display: none" id="startButton" onclick="start()" href="#" class="botaoStart">Começar!</button>
+        <div id="startButtonOff" class="botaoStartOff">Começar!</div>
+        <div onclick="start()" style="display: none" id="startButton" onclick="start()" href="#" class="botaoStart">
+            <img style="cursor:pointer; width:35px" src="assets/start.svg">
+            <label style="cursor:pointer;">Começar!</label>
+        </div>
     </div>
 
     <div style="display: none" id="secondScreen" class="mainBox">
@@ -36,11 +39,23 @@
         </div>  -->
 
         <!-- <button id="startButtonOff" class="botaoStart">Começar!</button> -->
-        <button onclick="startTimer()"  id="startTimerButton" onclick="startTimer()" href="#" class="botaoStart">Começar!</button>
+        <div onclick="startTimer()"  id="startTimerButton"  href="#" class="botaoStart">
+    
+            <img style="cursor:pointer;width:35px" src="assets/running.svg">
+            <label style="cursor:pointer;">Começar!</label>
+  
+        </div>
+
+        <div style="display:none" onclick="resetTimer()"  id="resetTimerButton" href="#" class="botaoStart reset">
+    
+            <img style="cursor:pointer;width:35px" src="assets/reload.svg">
+            <label  style="cursor:pointer;">Reiniciar!</label>
+  
+        </div>
     </div>
 
     <div onclick="closeSwal()" style="display: none" id='swal' class="swal">
-        <img style="width: 250px" src="sound.gif">
+        <img style="width: 250px" src="assets/sound.gif">
     </div>
 
 

@@ -4,9 +4,11 @@ var timerRunning = false;
 var secondScreen = false;
 var swalOn = false;
 var audioPlaying;
+var running;
 var firstButtonDisabled = true;
 
-var alarm = new Audio('alarm1.mp3');
+var alarm = new Audio('assets/alarm1.mp3');
+var beep = new Audio('assets/beep.mp3');
 var duration = Math.ceil(alarm) * 1000;
 
 
@@ -16,7 +18,7 @@ function getIterance(){
     // seconds = get("seconds").value;
     if (iterance&&seconds){
         firstButtonDisabled = false;
-        get("startButton").style.display = 'block';
+        get("startButton").style.display = 'flex';
         get("startButtonOff").style.display = 'none'; 
    
     } else {
@@ -33,7 +35,7 @@ function getSeconds(){
     seconds = get("seconds").value;
     if (iterance&&seconds){
         firstButtonDisabled = false;
-        get("startButton").style.display = 'block';
+        get("startButton").style.display = 'flex';
         get("startButtonOff").style.display = 'none'; 
     } else {
         firstButtonDisabled = true;
@@ -83,14 +85,32 @@ function getTime(){
     return get("timer").innerText;
 }
 
+function resetTimer(){
+  
+       get('resetTimerButton').style.display ='none';
+       get('startTimerButton').style.display = 'flex';
+       clearInterval(running);
+       console.log('Time to reset');
+    //    spawnSWAL();
+       setIterance(iterance);
+       setTime(toMinutes(seconds));
+       timerRunning = false;
+   
+}
+
 function startTimer(){
 
     if(!timerRunning){
         timerRunning = true;
-        var running = setInterval(() => {
+        get('resetTimerButton').style.display ='flex';
+        get('startTimerButton').style.display = 'none';
+        playBeep();
+        running = setInterval(() => {
            var oldSecond = getTime();
            var newSecond = (toSeconds(oldSecond)) - 1;
            if (getTime() === '00:00') {
+                get('resetTimerButton').style.display ='none';
+                get('startTimerButton').style.display = 'flex';
                clearInterval(running);
                console.log('Time to stop');
                iterance--;
@@ -143,6 +163,10 @@ function closeSwal(){
 
 function playAudio() {
   alarm.play();
+}
+
+function playBeep() {
+    beep.play();
 }
 
 function pauseAudio() {
