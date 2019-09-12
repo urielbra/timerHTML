@@ -132,7 +132,16 @@ function startTimer(){
                console.log('Time to stop');
                iterance--;
                spawnSWAL();
-               setIterance(iterance);
+               if(iterance === 1){
+                get('restam').innerText = 'Resta';
+                setIterance(iterance);
+                get("reps").innerText = 'repetição';
+               } else {
+                    get('restam').innerText = 'Restam';
+                    setIterance(iterance);
+                    get("reps").innerText = 'repetições';
+
+               }
                setTime(toMinutes(seconds));
                timerRunning = false;
            } else {    
