@@ -96,7 +96,7 @@ function setTime(actual){
 
 function setIterance(actual){
     get("iteranceLeft").innerText  = actual;
-    if(actual === 1){
+    if(actual === '1'){
         get('restam').innerText = 'Resta';
   
         get("reps").innerText = 'repetição';
