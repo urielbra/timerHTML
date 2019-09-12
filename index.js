@@ -96,6 +96,16 @@ function setTime(actual){
 
 function setIterance(actual){
     get("iteranceLeft").innerText  = actual;
+    if(actual === 1){
+        get('restam').innerText = 'Resta';
+  
+        get("reps").innerText = 'repetição';
+    } else {
+        get('restam').innerText = 'Restam';
+  
+        get("reps").innerText = 'repetições';
+    }
+
 }
 
 function getTime(){
@@ -132,16 +142,7 @@ function startTimer(){
                console.log('Time to stop');
                iterance--;
                spawnSWAL();
-               if(iterance === 1){
-                get('restam').innerText = 'Resta';
                 setIterance(iterance);
-                get("reps").innerText = 'repetição';
-               } else {
-                    get('restam').innerText = 'Restam';
-                    setIterance(iterance);
-                    get("reps").innerText = 'repetições';
-
-               }
                setTime(toMinutes(seconds));
                timerRunning = false;
            } else {    
