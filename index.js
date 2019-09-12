@@ -13,6 +13,8 @@ document.addEventListener ('keypress', (event) => {
       
       if(timerRunning){
         resetTimer();
+      } else if(audioPlaying) {
+        closeSwal();
       } else{
         startTimer();
       }
