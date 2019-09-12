@@ -159,6 +159,7 @@ function spawnSWAL(){
 
 function closeSwal(){
     clearInterval(audioPlaying);
+    audioPlaying = false;
     pauseAudio();
     get('secondScreen').style.display = 'block';
     (get('swal').style.display='none')
