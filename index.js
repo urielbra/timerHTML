@@ -20,6 +20,13 @@ document.addEventListener ('keypress', (event) => {
       }
     }
   }
+  if(!secondScreen){
+    if(event.charCode === 32){
+        if(!firstButtonDisabled){
+            start()
+        }
+    }
+  }
 });
 
 
